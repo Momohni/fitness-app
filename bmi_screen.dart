@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:snackbar_dailogs_bottom_sheets/shared/drawer.dart';
-import 'package:snackbar_dailogs_bottom_sheets/shared/bottom_navigation_bar.dart';
 
 class BmiScreen extends StatefulWidget {
   const BmiScreen({super.key});
@@ -30,10 +28,7 @@ class _BmiScreenState extends State<BmiScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar:
-          AppBar(backgroundColor: Colors.black, title: Text('BMI Calculator')),
-      body: Stack(
+    return Stack(
         children: [
           Container(color: Colors.black,),
           Container(
@@ -45,7 +40,7 @@ class _BmiScreenState extends State<BmiScreen> {
                     height: 80,
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(20.0),
                     child: TextField(
                       controller: txtHeight,
                       // obscureText: true,
@@ -71,7 +66,7 @@ class _BmiScreenState extends State<BmiScreen> {
                     height: 40,
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(20.0),
                     child: TextField(
                       controller: txtWeight,
                       style: TextStyle(color: Colors.white),
@@ -105,8 +100,10 @@ class _BmiScreenState extends State<BmiScreen> {
                         result = 'Your BMI is ' + bmi.toStringAsFixed(2);
                       });
                     },
-                    child: Text('Calculate BMI'),
-                    style: ElevatedButton.styleFrom(),
+                    child: Text('Calculate BMI',style: TextStyle(color: Colors.black),),
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      backgroundColor: Colors.white),
                   ),
                   SizedBox(
                     height: 30,
@@ -120,9 +117,6 @@ class _BmiScreenState extends State<BmiScreen> {
             ),
           ),
         ],
-      ),
-      drawer: MenuDrawer(),
-      bottomNavigationBar: BottomDrawer(),
-    );
+      );
   }
 }

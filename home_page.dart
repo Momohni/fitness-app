@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:snackbar_dailogs_bottom_sheets/shared/drawer.dart';
-import 'package:snackbar_dailogs_bottom_sheets/shared/bottom_navigation_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: MenuDrawer(),
-      bottomNavigationBar: BottomDrawer(),
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text('Globo Fitness'),
-      ),
-      body: Container(
+    return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
@@ -38,7 +29,6 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
